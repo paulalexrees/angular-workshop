@@ -1,1 +1,1 @@
-var timeApp = angular.module('timeApp', []);
+var counterApp = angular.module('counterApp', []);
