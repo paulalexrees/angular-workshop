@@ -1,33 +1,20 @@
 <!doctype html>
-<html lang="en" ng-app="counterApp">
+<html lang="en" ng-app="countersApp">
   <head>
     <meta charset="utf-8">
     <title>Counter</title>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="js/factories/counterFactory.js"></script>
+    <script src="js/controllers/countersController.js"></script>
   </head>
   <body>
 
-    <div ng-controller="CounterCtrl as counter">
-      <button ng-click="counter.decrement()">-</button>
-      {{ counter.count }}
-      <button ng-click="counter.increment()">+</button>
-    </div>
-
-    <div ng-repeat="n in [1,2,3]">
-      <div ng-controller="CounterCtrl as counter">
+    <div ng-controller="CountersCtrl as counters">
+      <div ng-repeat="counter in counters.model">
         <button ng-click="counter.decrement()">-</button>
         {{ counter.count }}
         <button ng-click="counter.increment()">+</button>
-      </div>
-    </div>
-
-    <div ng-controller="CounterModelCtrl as counterCtrl">
-      <div ng-repeat="counter in counterCtrl.counters">
-        <button ng-click="counterCtrl.decrement(counter)">-</button>
-        {{ counter.count }}
-        <button ng-click="counterCtrl.increment(counter)">+</button>
       </div>
     </div>
 
