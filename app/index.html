@@ -24,10 +24,10 @@
     </div>
 
     <div ng-controller="CounterCtrl as counterCtrl">
-      <div ng-repeat="counter in counterCtrl.counters">
-        <button ng-click="counterCtrl.decrement(counter)">-</button>
+      <div ng-repeat="counter in counterCtrl.counterService.counters">
+        <button ng-click="counterCtrl.counterService.decrement(counter)">-</button>
         {{ counter.count  }}
-        <button ng-click="counterCtrl.increment(counter)">+</button>
+        <button ng-click="counterCtrl.counterService.increment(counter)">+</button>
       </div>
     </div>
   </body>
